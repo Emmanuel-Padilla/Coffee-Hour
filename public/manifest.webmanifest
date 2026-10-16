@@ -1,0 +1,14 @@
+{
+  "name": "Coffee Hour Chapala",
+  "short_name": "Coffee Hour",
+  "description": "Café, desayunos, frappés y postres en el centro de Chapala, Jalisco.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF1DC",
+  "theme_color": "#654321",
+  "lang": "es-MX",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

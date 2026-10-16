@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fff1dc;
+  --text: #1f2937;
+  --text-muted: #374151;
+  --border: #e7dfd3;
+  --surface: #ffffff;
+}
+
+.dark {
+  --bg: #14110d;
+  --bg-soft: #1f1912;
+  --text: #f5f1ea;
+  --text-muted: #cbbfa9;
+  --border: #3a2f22;
+  --surface: #1c1712;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: theme('fontFamily.sans');
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle whole-site grain — the single biggest cheap trick for killing the "flat AI gradient" look. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url('./assets/textures/noise.svg');
+  background-size: 220px 220px;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  body::after {
+    display: none;
+  }
+}
+
+::selection {
+  background-color: #c97820;
+  color: #fff1dc;
+}
+
+:focus-visible {
+  outline: 2px solid #c97820;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.font-display {
+  font-family: theme('fontFamily.display');
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[1000] focus:rounded-md focus:bg-coffee-600 focus:px-4 focus:py-2 focus:text-white;
+}
+
+.reveal-section {
+  opacity: 0;
+  transition: opacity 700ms ease, transform 850ms cubic-bezier(0.22, 1, 0.36, 1), clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity, clip-path;
+}
+
+.reveal-from-left {
+  transform: translate3d(-36px, 0, 0);
+  clip-path: inset(0 7% 0 0);
+}
+
+.reveal-from-right {
+  transform: translate3d(36px, 0, 0);
+  clip-path: inset(0 0 0 7%);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .reveal-from-left,
+  .reveal-from-right {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    will-change: auto;
+  }
+}
