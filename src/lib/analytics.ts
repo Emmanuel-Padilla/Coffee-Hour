@@ -1,6 +1,6 @@
 /**
- * GA4 is only wired up if PUBLIC_GA_MEASUREMENT_ID is set in the environment.
- * No ID is ever hardcoded or invented here — see .env.example.
+ * Use the site's GA4 property by default. Set PUBLIC_GA_MEASUREMENT_ID to
+ * override it, or set it to an empty string to disable analytics.
  */
 declare global {
   interface Window {
@@ -9,24 +9,24 @@ declare global {
   }
 }
 
-const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-35PLSX9GLD';
 let initialized = false;
 
 export function initAnalytics() {
   if (!GA_ID || initialized || typeof document === 'undefined') return;
   initialized = true;
 
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID, { send_page_view: false });
+
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
-  };
-  window.gtag('js', new Date());
-  window.gtag('config', GA_ID, { send_page_view: false });
 }
 
 export function trackPageView(path: string) {

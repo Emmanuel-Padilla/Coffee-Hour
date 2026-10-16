@@ -2,7 +2,6 @@ import { useEffect, type ReactNode } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { LanguageProvider, LANG_STORAGE_KEY, type Lang } from '@/context/LanguageContext';
-import { initAnalytics } from '@/lib/analytics';
 
 import Home from '@/pages/Home';
 import History from '@/pages/History';
@@ -70,9 +69,6 @@ function useInitialLanguageDetection() {
 }
 
 export default function App() {
-  useEffect(() => {
-    initAnalytics();
-  }, []);
   useInitialLanguageDetection();
 
   return (
