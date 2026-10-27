@@ -1,6 +1,6 @@
 /**
- * Real photography pulled from the official site. Captions describe what is actually pictured —
- * the fabricated "$15 / 4.9★" overlays from the old gallery are intentionally dropped.
+ * Photography from the official site and photos supplied for this gallery.
+ * Captions describe what is actually pictured.
  */
 export interface GalleryPhoto {
   id: string;
@@ -11,6 +11,66 @@ export interface GalleryPhoto {
 }
 
 export const galleryPhotos: GalleryPhoto[] = [
+  {
+    id: 'entrada-patio',
+    file: 'entrada-patio.webp',
+    category: 'ambiente',
+    caption: { es: 'Bienvenidos a Coffee Hour', en: 'Welcome to Coffee Hour' },
+    alt: {
+      es: 'Entrada al patio de Coffee Hour con pizarras, mesas y sombrillas de colores',
+      en: 'Entrance to the Coffee Hour patio with chalkboards, tables and colorful umbrellas',
+    },
+  },
+  {
+    id: 'taza-canela',
+    file: 'taza-canela.webp',
+    category: 'bebidas',
+    caption: { es: 'Una pausa entre aromas y canela', en: 'A pause among aromas and cinnamon' },
+    alt: {
+      es: 'Taza blanca con una rodaja de manzana y ramas de canela sobre la mesa',
+      en: 'White mug with an apple slice and cinnamon sticks on the table',
+    },
+  },
+  {
+    id: 'salon-tazas',
+    file: 'salon-tazas.webp',
+    category: 'ambiente',
+    caption: { es: 'Nuestro rincón de las tazas', en: 'Our mug collection corner' },
+    alt: {
+      es: 'Salón de Coffee Hour con colección de tazas, mesas y plantas',
+      en: 'Coffee Hour seating area with a mug collection, tables and plants',
+    },
+  },
+  {
+    id: 'terraza-corazones',
+    file: 'terraza-corazones.webp',
+    category: 'ambiente',
+    caption: { es: 'Entre plantas y corazones', en: 'Among plants and hearts' },
+    alt: {
+      es: 'Terraza con corazones colgantes, sillas tejidas y una bugambilia blanca',
+      en: 'Terrace with hanging hearts, woven chairs and a white bougainvillea',
+    },
+  },
+  {
+    id: 'patio-bugambilias',
+    file: 'patio-bugambilias.webp',
+    category: 'ambiente',
+    caption: { es: 'Flores y luz en el patio', en: 'Flowers and light in the patio' },
+    alt: {
+      es: 'Bugambilias blancas junto a la escalera de madera y las luces del patio',
+      en: 'White bougainvillea beside the wooden staircase and patio lights',
+    },
+  },
+  {
+    id: 'patio-nocturno',
+    file: 'patio-nocturno.webp',
+    category: 'ambiente',
+    caption: { es: 'La calidez de nuestras noches', en: 'The warmth of our evenings' },
+    alt: {
+      es: 'Patio de noche con guirnaldas de luces, plantas y platos decorativos en la pared',
+      en: 'Patio at night with string lights, plants and decorative plates on the wall',
+    },
+  },
   {
     id: 'chilaquiles-supremos',
     file: 'platillo1.webp',

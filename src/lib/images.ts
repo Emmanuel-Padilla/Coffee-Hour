@@ -7,6 +7,12 @@ import platillo6 from '@/assets/images/platillo6.webp';
 import heroInterior from '@/assets/images/hero-interior.webp';
 import coffeehour4 from '@/assets/images/coffeehour-4.webp';
 import coffeehour7 from '@/assets/images/coffeehour-7.webp';
+import entradaPatio from '@/assets/images/entrada-patio.webp';
+import tazaCanela from '@/assets/images/taza-canela.webp';
+import salonTazas from '@/assets/images/salon-tazas.webp';
+import terrazaCorazones from '@/assets/images/terraza-corazones.webp';
+import patioBugambilias from '@/assets/images/patio-bugambilias.webp';
+import patioNocturno from '@/assets/images/patio-nocturno.webp';
 
 /**
  * Explicit map (not a directory glob) so Vite only bundles images actually referenced by
@@ -14,6 +20,12 @@ import coffeehour7 from '@/assets/images/coffeehour-7.webp';
  * ones no page ever renders.
  */
 const imageMap: Record<string, string> = {
+  'entrada-patio.webp': entradaPatio,
+  'taza-canela.webp': tazaCanela,
+  'salon-tazas.webp': salonTazas,
+  'terraza-corazones.webp': terrazaCorazones,
+  'patio-bugambilias.webp': patioBugambilias,
+  'patio-nocturno.webp': patioNocturno,
   'platillo1.webp': platillo1,
   'platillo2.webp': platillo2,
   'platillo3.webp': platillo3,
