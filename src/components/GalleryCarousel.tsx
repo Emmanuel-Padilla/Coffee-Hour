@@ -75,7 +75,7 @@ export default function GalleryCarousel() {
               ref={(el) => {
                 slideRefs.current[i] = el;
               }}
-              className="relative aspect-[4/3] w-full shrink-0 snap-center sm:aspect-[16/9]"
+              className="relative aspect-[4/3] w-full shrink-0 snap-center bg-ink-900 sm:aspect-[16/9]"
             >
               {src && (
                 <img
@@ -83,7 +83,7 @@ export default function GalleryCarousel() {
                   alt={photo.alt[lang]}
                   loading={i === 0 ? 'eager' : 'lazy'}
                   decoding="async"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                 />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />

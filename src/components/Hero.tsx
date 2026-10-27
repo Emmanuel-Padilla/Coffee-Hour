@@ -5,8 +5,8 @@ import { business } from '@/data/business';
 import { trackEvent } from '@/lib/analytics';
 import { useParallax } from '@/hooks/useParallax';
 import { ArrowRightIcon, ClockIcon, MapPinIcon, CoffeeCupIcon } from '@/components/icons';
-import heroImg from '@/assets/images/coffeehour-7.webp';
-import detailImg from '@/assets/images/hero-interior.webp';
+import heroImg from '@/assets/images/entrada-patio.webp';
+import detailImg from '@/assets/images/taza-canela.webp';
 
 export default function Hero() {
   const { dict, lang } = useLanguage();
@@ -19,9 +19,9 @@ export default function Hero() {
         <img
           ref={parallaxRef}
           src={heroImg}
-          alt="Patio y barra de Coffee Hour Chapala"
-          width={1240}
-          height={930}
+          alt={lang === 'en' ? 'Entrance and colorful umbrellas at Coffee Hour Chapala' : 'Entrada y sombrillas de colores de Coffee Hour Chapala'}
+          width={1920}
+          height={1441}
           fetchPriority="high"
           loading="eager"
           className="absolute inset-x-0 -top-[6%] h-[112%] w-full object-cover object-center"
@@ -85,7 +85,7 @@ export default function Hero() {
 
         <div className="absolute bottom-12 right-8 hidden w-64 rotate-2 border border-white/15 bg-[#17120e]/75 p-3 shadow-2xl backdrop-blur-md xl:block">
           <div className="aspect-[16/10] overflow-hidden">
-            <img src={detailImg} alt="Barra de Coffee Hour" width={1240} height={930} className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+            <img src={detailImg} alt={lang === 'en' ? 'White mug with apple and cinnamon at Coffee Hour' : 'Taza blanca con manzana y canela en Coffee Hour'} width={1537} height={2048} className="h-full w-full object-cover object-[center_65%] transition duration-700 hover:scale-105" />
           </div>
           <div className="flex items-center justify-between gap-3 px-1 pb-1 pt-3">
             <span className="font-display text-sm italic text-cream">{dict.common.since}</span>

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { business } from '@/data/business';
+import { pageSeo } from '@/data/seo';
 import { esPath, enPath, type RouteSlug } from '@/routes';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -25,6 +26,7 @@ export default function SEO({ slug, title, description, image, noindex }: SEOPro
       <html lang={lang === 'en' ? 'en' : 'es-MX'} />
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={pageSeo[slug].keywords[lang].join(', ')} />
       <link rel="canonical" href={canonical} />
       <link rel="alternate" hrefLang="es-MX" href={`${origin}${esPath(slug)}`} />
       <link rel="alternate" hrefLang="en" href={`${origin}${enPath(slug)}`} />

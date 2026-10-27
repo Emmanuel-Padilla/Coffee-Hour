@@ -13,9 +13,9 @@ yarn preview   # sirve dist/ localmente
 
 ## Variables de entorno
 
-Copia `.env.example` a `.env.local` y define `PUBLIC_GA_MEASUREMENT_ID` solo si ya existe
-un ID real de Google Analytics 4. Si se deja vacío, la analítica simplemente no se activa
-(no se inventó ningún ID).
+Google Analytics 4 usa `G-35PLSX9GLD` por defecto. Para cambiar la propiedad, copia
+`.env.example` a `.env.local` y ajusta `PUBLIC_GA_MEASUREMENT_ID`. Para desactivar
+la analítica, define esa variable con un valor vacío. Los cambios requieren recompilar.
 
 ## Dónde vive cada dato (fuente única — edítalo una vez)
 
@@ -29,7 +29,7 @@ un ID real de Google Analytics 4. Si se deja vacío, la analítica simplemente n
 | Videos | `src/data/videos.ts` |
 | Blog / guía local | `src/data/blog.ts` |
 | Textos de UI (ambos idiomas) | `src/i18n/es.ts`, `src/i18n/en.ts` |
-| Meta title/description por página | `src/data/seo.ts` |
+| Títulos, descripciones y palabras clave por página e idioma | `src/data/seo.ts` |
 | Rutas del sitio (ambos idiomas) | `src/routes.ts` |
 
 Cambiar el teléfono, la dirección o el horario en `business.ts` los actualiza en **todo**
@@ -57,4 +57,3 @@ deben confirmarse con el negocio antes de lanzar:
 - Coordenadas GPS exactas (el mapa usa búsqueda por dirección, no lat/lng fijos).
 - Reseñas de clientes: no se publicaron testimonios inventados; la sección enlaza a las
   reseñas reales en Google Maps / redes en lo que se obtiene permiso para citarlas.
-- `PUBLIC_GA_MEASUREMENT_ID` real de GA4.
